@@ -25,7 +25,7 @@ class RandomUserViewModel: ObservableObject { // 이벤트 받을 수 있음
         fetchRandomUsers()
     }
     
-    func fetchRandomUsers(){ // 
+    func fetchRandomUsers(){ //
         AF.request(baseUrl)
             .publishDecodable(type: RandomUserResopnse.self)
             .compactMap{ $0.value } // unrraping
